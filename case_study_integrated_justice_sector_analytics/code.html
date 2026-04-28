@@ -1,0 +1,387 @@
+<!DOCTYPE html><html class="dark" lang="en" data-lt-installed="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Integrated Justice Sector Analytics | Case Study</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#0b1326",
+                    "on-secondary": "#522300",
+                    "on-error": "#690005",
+                    "inverse-surface": "#dae2fd",
+                    "secondary-fixed": "#ffdbc8",
+                    "outline": "#8b90a0",
+                    "on-tertiary-fixed": "#00210c",
+                    "surface-container": "#171f33",
+                    "secondary-fixed-dim": "#ffb68b",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#222a3d",
+                    "surface-container-lowest": "#060e20",
+                    "surface-tint": "#adc7ff",
+                    "tertiary-fixed-dim": "#49e181",
+                    "surface": "#0b1326",
+                    "on-tertiary": "#003919",
+                    "surface-container-highest": "#2d3449",
+                    "on-primary-fixed": "#001a41",
+                    "on-secondary-container": "#602a00",
+                    "primary-fixed-dim": "#adc7ff",
+                    "on-surface-variant": "#c1c6d7",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#6afe9b",
+                    "secondary": "#ffb68b",
+                    "on-surface": "#dae2fd",
+                    "on-secondary-fixed": "#321200",
+                    "on-background": "#dae2fd",
+                    "on-tertiary-container": "#003115",
+                    "error-container": "#93000a",
+                    "on-primary-container": "#00285b",
+                    "inverse-primary": "#005bc0",
+                    "on-tertiary-fixed-variant": "#005227",
+                    "surface-container-low": "#131b2e",
+                    "surface-variant": "#2d3449",
+                    "on-primary-fixed-variant": "#004493",
+                    "surface-bright": "#31394d",
+                    "on-primary": "#002e68",
+                    "primary-fixed": "#d8e2ff",
+                    "primary-container": "#4a8eff",
+                    "on-secondary-fixed-variant": "#753400",
+                    "tertiary": "#49e181",
+                    "background": "#0b1326",
+                    "tertiary-container": "#00a756",
+                    "primary": "#adc7ff",
+                    "inverse-on-surface": "#283044",
+                    "secondary-container": "#ff7f1c",
+                    "outline-variant": "#414754"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "display": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 144, 160, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#0b1326] dark:bg-[#0b1326] fixed top-0 w-full z-50 border-b border-slate-800/50 shadow-sm transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-16 px-8 max-w-[1280px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-slate-100 uppercase" style="">Analyst Portfolio</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-inter text-sm font-medium tracking-wide" href="#" style="">Portfolio</a>
+<a class="text-blue-400 border-b-2 border-blue-400 pb-1 font-inter text-sm font-medium tracking-wide" href="#" style="">Case Studies</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-inter text-sm font-medium tracking-wide" href="#" style="">Resume</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-inter text-sm font-medium tracking-wide" href="#" style="">Insights</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-slate-400 hover:bg-slate-800/40 rounded-full transition-all" style="">
+<span class="material-symbols-outlined" style="">mail</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-slate-800/40 rounded-full transition-all" style="">
+<span class="material-symbols-outlined" style="">account_circle</span>
+</button>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-semibold text-sm hover:opacity-90 transition-all" style=""><br></button>
+</div>
+</div>
+</header>
+<div class="flex max-w-[1280px] mx-auto pt-16">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col py-8 gap-y-6 bg-[#0b1326] dark:bg-[#0b1326] fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-slate-800/50">
+<div class="px-6 mb-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary" style="">analytics</span>
+</div>
+<div>
+<p class="text-on-surface font-bold text-sm tracking-tight" style="">Project Alpha</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest" style="">Operational Efficiency</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col">
+<a class="text-blue-400 border-l-2 border-blue-400 pl-4 bg-blue-400/5 py-3 flex items-center gap-3 transition-transform font-inter text-xs uppercase tracking-widest font-semibold" href="#business-context" style="">
+<span class="material-symbols-outlined text-lg" style="">business_center</span>
+                    Business Context
+                </a>
+<a class="text-slate-500 pl-4 hover:text-slate-200 py-3 flex items-center gap-3 transition-transform font-inter text-xs uppercase tracking-widest font-semibold" href="#stakeholders" style="">
+<span class="material-symbols-outlined text-lg" style="">groups</span>
+                    Stakeholders
+                </a>
+<a class="text-slate-500 pl-4 hover:text-slate-200 py-3 flex items-center gap-3 transition-transform font-inter text-xs uppercase tracking-widest font-semibold" href="#data-challenges" style="">
+<span class="material-symbols-outlined text-lg" style="">query_stats</span>
+                    Data Challenges
+                </a>
+<a class="text-slate-500 pl-4 hover:text-slate-200 py-3 flex items-center gap-3 transition-transform font-inter text-xs uppercase tracking-widest font-semibold" href="#solution" style="">
+<span class="material-symbols-outlined text-lg" style="">lightbulb</span>
+                    Solution
+                </a>
+<a class="text-slate-500 pl-4 hover:text-slate-200 py-3 flex items-center gap-3 transition-transform font-inter text-xs uppercase tracking-widest font-semibold" href="#impact" style="">
+<span class="material-symbols-outlined text-lg" style="">trending_up</span>
+                    Impact
+                </a>
+</nav>
+<div class="mt-auto px-6 pt-6 border-t border-slate-800/50">
+<a class="text-slate-500 hover:text-slate-200 py-2 flex items-center gap-3 text-xs uppercase tracking-widest font-semibold" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">arrow_upward</span>
+                    Back to Top
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 p-8 lg:p-12">
+<!-- Hero Header Section -->
+<section class="mb-16">
+<div class="flex flex-col gap-4 mb-8">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase w-fit" style="">
+                        Case Study: Public Sector
+                    </div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight text-on-surface" style="">
+                        Integrated Justice <span class="text-primary" style="">Sector Analytics</span>
+</h1>
+<p class="text-on-surface-variant text-lg lg:text-xl max-w-3xl leading-relaxed" style="">
+                        A cross-institutional data integration framework designed to unify fragmented justice systems and enable national-level strategic decision making.
+                    </p>
+</div>
+<!-- Main Project Visual -->
+<div class="relative rounded-xl overflow-hidden border border-outline-variant bg-surface-container shadow-2xl">
+<img alt="Integrated Justice Sector Analytics Dashboard Visualization" class="w-full h-auto object-cover max-h-[600px]" data-alt="A futuristic 3D isometric data visualization showing interconnected government buildings, biometric data, and justice sector performance metrics in a glowing blue digital environment." src="https://lh3.googleusercontent.com/aida/ADBb0ujyydR0yeaWE2cgvdF2s40Z60WP-FwrM-Ah7HprT7JqPezC4N_BtFmWo0RYKDGUKdpRuBCq7r9Qahm-PckO09N5mdd80o_3oAqCKaCEPsUTq4ENpvzyOaKYjMrDujE10E1jf1vJX5pK_sS1Z7kTDsRD0hXk7NbSH99YzSlNhIgzu--ilvcFg55pvd2nSxRRsUeEzdrIP3ZVxlyRSnLAHLLW4JhMrl7NCTkwhSOJSmz7Vm5BG_B8zPTBdQxid-bkEN1zQoMzkQr_eLI" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 via-transparent to-transparent"></div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Business Context & Problem -->
+<section class="md:col-span-8 glass-card p-8 rounded-xl" id="business-context">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" style="">account_balance</span>
+<h2 class="text-2xl font-bold text-on-surface tracking-tight" style="">Business Context &amp; Problem</h2>
+</div>
+<div class="space-y-4 text-on-surface-variant leading-relaxed">
+<p class="" style="">The national justice sector faced a critical bottleneck: multiple high-level institutions were operating as independent "information islands." This fragmentation prevented a holistic view of the justice pipeline.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+<div class="p-4 bg-surface-container-highest rounded-lg border-l-4 border-secondary">
+<h4 class="text-on-surface font-bold text-sm mb-1" style="">Operational Independence</h4>
+<p class="text-xs" style="">Systems built in isolation with no native cross-talk or data sharing protocols.</p>
+</div>
+<div class="p-4 bg-surface-container-highest rounded-lg border-l-4 border-error">
+<h4 class="text-on-surface font-bold text-sm mb-1" style="">Inconsistent Data</h4>
+<p class="text-xs" style="">Same legal entities recorded with different IDs across platforms, leading to zero traceability.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tools & Stack -->
+<section class="md:col-span-4 glass-card p-8 rounded-xl border-primary/20">
+<h3 class="text-xs font-bold uppercase tracking-widest text-primary mb-6" style="">Project Tools</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="">dashboard</span>
+<div>
+<p class="text-on-surface font-semibold text-sm" style="">Tableau</p>
+<p class="text-xs text-on-surface-variant" style="">Visualization &amp; BI</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-tertiary" style="">schema</span>
+<div>
+<p class="text-on-surface font-semibold text-sm" style="">Data Modeling</p>
+<p class="text-xs text-on-surface-variant" style="">Conceptual &amp; Logical</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary" style="">groups_3</span>
+<div>
+<p class="text-on-surface font-semibold text-sm" style="">Workshop Facilitation</p>
+<p class="text-xs text-on-surface-variant" style="">Requirement Gathering</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stakeholders -->
+<section class="md:col-span-12 glass-card p-8 rounded-xl" id="stakeholders">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" style="">diversity_3</span>
+<h2 class="text-2xl font-bold text-on-surface tracking-tight" style="">Key Stakeholders</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div class="text-center p-4 border border-outline-variant/30 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2 block text-3xl" style="">local_police</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter text-on-surface" style="">National Civil Police</p>
+</div>
+<div class="text-center p-4 border border-outline-variant/30 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2 block text-3xl" style="">gavel</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter text-on-surface" style="">Public Prosecutor’s Office</p>
+</div>
+<div class="text-center p-4 border border-outline-variant/30 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2 block text-3xl" style="">balance</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter text-on-surface" style="">Supreme Court</p>
+</div>
+<div class="text-center p-4 border border-outline-variant/30 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2 block text-3xl" style="">shield_person</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter text-on-surface" style="">Public Defense</p>
+</div>
+<div class="text-center p-4 border border-outline-variant/30 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2 block text-3xl" style="">biotech</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter text-on-surface" style="">National Forensic Institute</p>
+</div>
+</div>
+</section>
+<!-- Data Challenges & Role -->
+<section class="md:col-span-6 glass-card p-8 rounded-xl" id="data-challenges">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-error text-3xl" style="">warning</span>
+<h2 class="text-2xl font-bold text-on-surface tracking-tight" style="">Data Challenges</h2>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-primary mt-1" style="">lens</span>
+<span class="text-on-surface-variant text-sm" style=""><strong>Deep Data Silos:</strong> Zero API connectivity between systems; manual CSV exports were the primary mode of transfer.</span>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-primary mt-1" style="">lens</span>
+<span class="text-on-surface-variant text-sm" style=""><strong>Semantic Ambiguity:</strong> No standardized definitions for fundamental objects like "Case," "Complaint," or "Resolution." One institution's "Closed Case" was another's "Active Investigation."</span>
+</li>
+</ul>
+</section>
+<section class="md:col-span-6 glass-card p-8 rounded-xl border-l-4 border-primary">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" style="">person_search</span>
+<h2 class="text-2xl font-bold text-on-surface tracking-tight" style="">My Role</h2>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 bg-primary/5 rounded border border-primary/10">
+<span class="material-symbols-outlined text-primary" style="">diversity_1</span>
+<p class="text-sm font-medium" style="">Facilitated multi-agency workshops</p>
+</div>
+<div class="flex items-center gap-3 p-3 bg-primary/5 rounded border border-primary/10">
+<span class="material-symbols-outlined text-primary" style="">data_object</span>
+<p class="text-sm font-medium" style="">Identified common data elements</p>
+</div>
+<div class="flex items-center gap-3 p-3 bg-primary/5 rounded border border-primary/10">
+<span class="material-symbols-outlined text-primary" style="">straighten</span>
+<p class="text-sm font-medium" style="">Defined standardized metrics</p>
+</div>
+<div class="flex items-center gap-3 p-3 bg-primary/5 rounded border border-primary/10">
+<span class="material-symbols-outlined text-primary" style="">architecture</span>
+<p class="text-sm font-medium" style="">Designed conceptual data model</p>
+</div>
+</div>
+</section>
+<!-- Solution Section -->
+<section class="md:col-span-12 glass-card p-8 lg:p-12 rounded-xl relative overflow-hidden" id="solution">
+<div class="absolute top-0 right-0 p-12 opacity-10">
+<span class="material-symbols-outlined text-[160px] text-primary" style="">lightbulb</span>
+</div>
+<div class="relative z-10 max-w-3xl">
+<h2 class="text-3xl font-bold text-on-surface mb-6" style="">The Solution: Unified Analytics Framework</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed" style="">
+                            Developed a cross-institutional semantic layer that mapped disparate data sources into a unified conceptual model. This wasn't just a dashboard; it was a common language for the entire justice sector.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h4 class="text-primary font-bold text-sm uppercase tracking-widest mb-3" style="">Shared Data Model</h4>
+<p class="text-sm text-on-surface-variant" style="">A robust ETL pipeline that normalized definitions and created a "Golden Record" for every legal case in the country.</p>
+</div>
+<div>
+<h4 class="text-primary font-bold text-sm uppercase tracking-widest mb-3" style="">Tableau Command Center</h4>
+<p class="text-sm text-on-surface-variant" style="">Executives can now track a case from initial police report through to final court resolution in real-time.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Section -->
+<section class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6" id="impact">
+<div class="md:col-span-1 glass-card p-8 rounded-xl bg-gradient-to-br from-tertiary/10 to-transparent flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-tertiary text-5xl mb-4" style="">analytics</span>
+<div class="text-3xl font-extrabold text-on-surface mb-2" style="">100%</div>
+<p class="text-xs uppercase tracking-widest font-bold text-on-surface-variant" style="">Metric Alignment</p>
+<p class="text-sm text-on-surface-variant mt-4" style="">Full consensus on KPIs across all 5 institutions for the first time in history.</p>
+</div>
+<div class="md:col-span-2 glass-card p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="">auto_graph</span>
+<h2 class="text-2xl font-bold text-on-surface tracking-tight" style="">Business Impact</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div>
+<h4 class="text-on-surface font-bold text-sm mb-2" style="">Strategic Decision-Making</h4>
+<p class="text-sm text-on-surface-variant" style="">Institutional heads now meet monthly with a shared dashboard to identify bottlenecks in the justice pipeline.</p>
+</div>
+<div>
+<h4 class="text-on-surface font-bold text-sm mb-2" style="">Efficiency Gains</h4>
+<p class="text-sm text-on-surface-variant" style="">Redundant data reporting tasks were reduced by 40% through automated data extraction and normalization.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<div class="mt-12 text-center mb-12">
+<p class="text-on-surface-variant text-sm mb-6" style="">Need similar operational efficiency in your organization?</p>
+<div class="flex justify-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold transition-all hover:scale-105 active:scale-95" title="Download Full Case Study (PDF)" style="">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xl" style="">download</span>
+<span class="" style="">Download Full Case Study (PDF)</span>
+</div>
+</button>
+<button class="bg-surface-container-high border border-outline-variant text-on-surface px-8 py-3 rounded-lg font-bold transition-all hover:bg-surface-bright" style="">Contact for Inquiries</button>
+</div>
+</div><footer class="mt-24 pt-12 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-2">
+<span class="text-on-surface font-bold text-lg uppercase tracking-tighter" style="">Analyst Portfolio</span>
+<p class="text-on-surface-variant text-xs" style="">© 2024 Senior Data Analyst. All Rights Reserved.</p>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">download</span>
+</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container border-t border-outline-variant/30 flex justify-around items-center h-16 z-50">
+<button class="flex flex-col items-center gap-1 text-primary" style="">
+<span class="material-symbols-outlined" style="">description</span>
+<span class="text-[10px] font-bold uppercase" style="">Case Study</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant" style="">
+<span class="material-symbols-outlined" style="">work</span>
+<span class="text-[10px] font-bold uppercase" style="">Projects</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant" style="">
+<span class="material-symbols-outlined" style="">person</span>
+<span class="text-[10px] font-bold uppercase" style="">Profile</span>
+</button>
+</nav>
+</body></html>

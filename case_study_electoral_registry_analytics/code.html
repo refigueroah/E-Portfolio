@@ -1,0 +1,425 @@
+<!DOCTYPE html><html class="dark" lang="en" data-lt-installed="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Case Study: Electoral Registry Analytics | Senior Analyst Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#004493",
+                        "primary-container": "#4a8eff",
+                        "surface-container-low": "#131b2e",
+                        "on-secondary": "#522300",
+                        "surface-variant": "#2d3449",
+                        "on-tertiary-fixed": "#00210c",
+                        "secondary-fixed-dim": "#ffb68b",
+                        "surface-container-high": "#222a3d",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#753400",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#060e20",
+                        "background": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "surface": "#0b1326",
+                        "secondary-fixed": "#ffdbc8",
+                        "outline": "#8b90a0",
+                        "tertiary-fixed-dim": "#49e181",
+                        "surface-dim": "#0b1326",
+                        "on-background": "#dae2fd",
+                        "inverse-primary": "#005bc0",
+                        "error": "#ffb4ab",
+                        "surface-container": "#171f33",
+                        "tertiary-container": "#00a756",
+                        "on-primary-fixed": "#001a41",
+                        "tertiary-fixed": "#6afe9b",
+                        "surface-tint": "#adc7ff",
+                        "secondary": "#ffb68b",
+                        "inverse-on-surface": "#283044",
+                        "on-tertiary-container": "#003115",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-secondary-container": "#602a00",
+                        "on-tertiary": "#003919",
+                        "on-primary": "#002e68",
+                        "inverse-surface": "#dae2fd",
+                        "tertiary": "#49e181",
+                        "on-tertiary-fixed-variant": "#005227",
+                        "on-primary-container": "#00285b",
+                        "primary-fixed": "#d8e2ff",
+                        "outline-variant": "#414754",
+                        "primary": "#adc7ff",
+                        "on-secondary-fixed": "#321200",
+                        "on-surface-variant": "#c1c6d7",
+                        "error-container": "#93000a",
+                        "on-surface": "#dae2fd",
+                        "secondary-container": "#ff7f1c",
+                        "surface-bright": "#31394d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.7);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 shadow-xl shadow-blue-900/5 h-16">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-full">
+<div class="text-lg font-bold tracking-tighter text-blue-300" style="">Senior Analyst Portfolio</div>
+<nav class="hidden md:flex items-center gap-8 font-['Inter'] text-sm tracking-tight">
+<a class="text-blue-300 border-b-2 border-blue-400 pb-1" href="#" style="">Case Studies</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#" style="">Methodology</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#" style="">About</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#" style="">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-400 hover:bg-slate-800/50 p-2 rounded-md transition-all scale-95 active:scale-90 duration-200" style="">leaderboard</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-semibold scale-95 active:scale-90 transition-all duration-200" style=""><br></button>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 border-r border-slate-800 bg-slate-900/50 backdrop-blur-lg hidden lg:flex flex-col p-4 space-y-2">
+<div class="px-4 py-6 mb-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary" style="">analytics</span>
+</div>
+<div>
+<h4 class="text-on-surface font-semibold text-sm" style="">Project Alpha</h4>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest" style="">Case Study Overview</p>
+</div>
+</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-500/10 text-blue-300 border-r-4 border-blue-500 font-['Inter'] font-medium text-xs uppercase tracking-widest transition-colors" href="#context" style="">
+<span class="material-symbols-outlined text-lg" style="">info</span> Context
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-800/30 hover:text-slate-200 transition-colors font-['Inter'] font-medium text-xs uppercase tracking-widest" href="#stakeholders" style="">
+<span class="material-symbols-outlined text-lg" style="">groups</span> Stakeholders
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-800/30 hover:text-slate-200 transition-colors font-['Inter'] font-medium text-xs uppercase tracking-widest" href="#challenges" style="">
+<span class="material-symbols-outlined text-lg" style="">warning</span> Challenges
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-800/30 hover:text-slate-200 transition-colors font-['Inter'] font-medium text-xs uppercase tracking-widest" href="#solution" style="">
+<span class="material-symbols-outlined text-lg" style="">lightbulb</span> Solution
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-800/30 hover:text-slate-200 transition-colors font-['Inter'] font-medium text-xs uppercase tracking-widest" href="#impact" style="">
+<span class="material-symbols-outlined text-lg" style="">trending_up</span> Impact
+        </a>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<section class="mb-12">
+<a class="inline-flex items-center gap-2 text-primary hover:text-primary-container transition-colors mb-6 text-sm font-semibold" href="#" style="">
+<span class="material-symbols-outlined text-sm" style="">arrow_back</span> Back to Portfolio
+            </a>
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<span class="text-secondary font-bold tracking-widest text-xs uppercase block mb-4" style="">Project Alpha / Data Strategy</span>
+<h1 class="text-4xl md:text-5xl font-bold text-on-surface leading-tight tracking-tighter mb-6" style="">
+                        Case Study: Electoral Registry Analytics
+                    </h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-xl" style="">
+                        Modernizing a legacy manual reporting system into a real-time self-service business intelligence platform for national voter demographic insights.
+                    </p>
+<div class="flex flex-wrap gap-4 mt-8">
+<div class="px-4 py-2 bg-surface-container-high rounded-lg border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" style="">data_object</span>
+<span class="text-sm font-medium" style="">Power BI</span>
+</div>
+<div class="px-4 py-2 bg-surface-container-high rounded-lg border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" style="">integration_instructions</span>
+<span class="text-sm font-medium" style="">Data Integration</span>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary opacity-20 group-hover:opacity-30 blur rounded-xl transition duration-500"></div>
+<div class="relative rounded-xl overflow-hidden glass-card border border-slate-700/50 shadow-2xl">
+<img alt="Electoral Dashboard Overview" class="w-full h-auto object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" data-alt="Professional data analytics dashboard with complex charts and maps in a dark sleek interface for strategic insights" src="https://lh3.googleusercontent.com/aida/ADBb0ugGGCWxRkdaUb5pJPngKauCNVQQjtTHEfVQ4GPNialrsKseX6JKsxTUWVLhcdjRjMR2k22L7dFZ_uTqm6imH8P1rmHZFg659QzHV_vssZu0jaqHq1J3tk0-1uzWBBag6_wo3PhYBVSbW8Mqeyg4IESU-ifwRB6gzQopXzrFoLYJyAF4T0_FpiVet6IL-kkp3I7UlxmmAbA2RLyYpLtXQndzpMz5xnv-QgVJoU7D4aqxRpBL5RBfWtZCOE2HMHPGxYwUpjWgZH1yJA" style="">
+</div>
+</div>
+</div>
+</section>
+<!-- KPI Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="glass-card p-6 rounded-xl border border-slate-800">
+<span class="text-on-surface-variant text-xs uppercase tracking-widest block mb-2" style="">Efficiency Gain</span>
+<div class="text-3xl font-bold text-tertiary" style="">4 Days → Real-time</div>
+<p class="text-on-surface-variant text-sm mt-2" style="">Processing time reduced by 100%</p>
+</div>
+<div class="glass-card p-6 rounded-xl border border-slate-800">
+<span class="text-on-surface-variant text-xs uppercase tracking-widest block mb-2" style="">Manual Workload</span>
+<div class="text-3xl font-bold text-secondary" style="">0 Requests</div>
+<p class="text-on-surface-variant text-sm mt-2" style="">Eliminated ~100 manual weekly stats</p>
+</div>
+<div class="glass-card p-6 rounded-xl border border-slate-800">
+<span class="text-on-surface-variant text-xs uppercase tracking-widest block mb-2" style="">Accessibility</span>
+<div class="text-3xl font-bold text-primary" style="">24 / 7</div>
+<p class="text-on-surface-variant text-sm mt-2" style="">Immediate access for 60+ external groups</p>
+</div>
+</section>
+<!-- Detailed Bento Content -->
+<div class="grid lg:grid-cols-12 gap-8">
+<!-- Context & Problem -->
+<div class="lg:col-span-7 glass-card p-8 rounded-xl border border-slate-800" id="context">
+<h3 class="text-2xl font-semibold mb-6 flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-primary" style="">analytics</span> Business Context &amp; Problem
+                </h3>
+<div class="space-y-4 text-on-surface-variant leading-relaxed">
+<p class="" style="">
+                        The Electoral Registry faced a massive administrative bottleneck. Each week, they handled roughly <span class="text-on-surface font-semibold" style="">100 manual requests</span> for specific voter statistics from political parties, academic institutions, and internal departments.
+                    </p>
+<p class="" style="">
+                        The response time averaged <span class="text-secondary font-semibold" style="">4 business days</span> per request, as staff had to manually query disparate legacy systems and format data into spreadsheets. This lack of accessibility delayed critical political analysis and research across the nation.
+                    </p>
+</div>
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container rounded-lg border-l-4 border-secondary">
+<span class="text-xs uppercase text-secondary font-bold" style="">The Pain Point</span>
+<p class="text-sm mt-1" style="">Manual query execution for every single request.</p>
+</div>
+<div class="p-4 bg-surface-container rounded-lg border-l-4 border-primary">
+<span class="text-xs uppercase text-primary font-bold" style="">The Opportunity</span>
+<p class="text-sm mt-1" style="">Democratize data access via central BI platform.</p>
+</div>
+</div>
+</div>
+<!-- Role & Tools -->
+<div class="lg:col-span-5 glass-card p-8 rounded-xl border border-slate-800 flex flex-col justify-between">
+<div>
+<h3 class="text-xl font-semibold mb-6 flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-tertiary" style="">person</span> My Role
+                    </h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-tertiary text-sm mt-1" style="">check_circle</span>
+<span class="text-sm text-on-surface-variant" style="">Led strategic business analysis and stakeholder interviews.</span>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-tertiary text-sm mt-1" style="">check_circle</span>
+<span class="text-sm text-on-surface-variant" style="">Executed comprehensive AS-IS vs TO-BE process assessment.</span>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-tertiary text-sm mt-1" style="">check_circle</span>
+<span class="text-sm text-on-surface-variant" style="">Authored functional requirements and technical elicitation documents.</span>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-tertiary text-sm mt-1" style="">check_circle</span>
+<span class="text-sm text-on-surface-variant" style="">Designed intuitive Dashboard UX for non-technical users.</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-8 border-t border-slate-800">
+<span class="text-xs uppercase tracking-widest text-on-surface-variant block mb-3" style="">Project Assets</span>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center border border-slate-700">
+<span class="material-symbols-outlined text-primary" style="">description</span>
+</div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center border border-slate-700">
+<span class="material-symbols-outlined text-tertiary" style="">dashboard</span>
+</div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center border border-slate-700">
+<span class="material-symbols-outlined text-secondary" style="">flowchart</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stakeholders -->
+<div class="lg:col-span-4 glass-card p-8 rounded-xl border border-slate-800" id="stakeholders">
+<h3 class="text-xl font-semibold mb-6 flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-primary" style="">diversity_3</span> Stakeholders
+                </h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-surface-container rounded border border-outline-variant/30">
+<span class="text-sm font-medium" style="">Electoral Registry Dept.</span>
+<span class="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded" style="">Owner</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container rounded border border-outline-variant/30">
+<span class="text-sm font-medium" style="">Internal IT Infrastructure</span>
+<span class="text-[10px] bg-tertiary/20 text-tertiary px-2 py-0.5 rounded" style="">Technical</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container rounded border border-outline-variant/30">
+<span class="text-sm font-medium" style="">Administrative Staff</span>
+<span class="text-[10px] bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded" style="">Process</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container rounded border border-outline-variant/30">
+<span class="text-sm font-medium" style="">60+ External Groups</span>
+<span class="text-[10px] bg-secondary/20 text-secondary px-2 py-0.5 rounded" style="">End-Users</span>
+</div>
+</div>
+</div>
+<!-- Data Challenges -->
+<div class="lg:col-span-8 glass-card p-8 rounded-xl border border-slate-800" id="challenges">
+<h3 class="text-xl font-semibold mb-6 flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-secondary" style="">database</span> Data Challenges
+                </h3>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-sm" style="">history</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface" style="">Legacy Architecture</h4>
+<p class="text-xs text-on-surface-variant mt-1" style="">Data siloed in outdated COBOL-based systems with limited export capabilities.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-sm" style="">rebase_edit</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface" style="">Manual Repetition</h4>
+<p class="text-xs text-on-surface-variant mt-1" style="">Staff performing identical queries weekly with zero automated caching.</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-sm" style="">lock_person</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface" style="">Access Barrier</h4>
+<p class="text-xs text-on-surface-variant mt-1" style="">No self-service portal existed, creating a "black box" for external stakeholders.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-sm" style="">trending_down</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface" style="">Scalability Gap</h4>
+<p class="text-xs text-on-surface-variant mt-1" style="">The existing process could not handle peak periods during election cycles.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Solution Highlight -->
+<div class="lg:col-span-12 glass-card p-10 rounded-xl border border-slate-800 relative overflow-hidden" id="solution">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl -mr-32 -mt-32"></div>
+<div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="text-3xl font-bold mb-6" style="">The Solution: Self-Service BI</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">
+                            We engineered a robust Power BI ecosystem that pulled daily incremental updates from the legacy registry databases. The solution featured:
+                        </p>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" style="">filter_alt</span>
+<div>
+<h4 class="text-lg font-semibold" style="">Dynamic Filtering</h4>
+<p class="text-sm text-on-surface-variant" style="">Users can now filter by municipality, age range, gender, and historic registration dates instantly.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" style="">sync</span>
+<div>
+<h4 class="text-lg font-semibold" style="">Automated Refresh</h4>
+<p class="text-sm text-on-surface-variant" style="">Eliminated manual query execution by implementing scheduled daily data warehouse syncs.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" style="">public</span>
+<div>
+<h4 class="text-lg font-semibold" style="">External Portal</h4>
+<p class="text-sm text-on-surface-variant" style="">A secure, web-embedded dashboard accessible to universities and political organizations 24/7.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="p-2 glass-card border border-white/5 rounded-2xl">
+<img alt="Infographic of data processing" class="w-full h-auto rounded-xl shadow-lg hover:grayscale-0 transition-all duration-500" data-alt="Conceptual infographic showing data streams converging into a central glowing core with digital data points" src="https://lh3.googleusercontent.com/aida/ADBb0ug5AT-MnhymTT0BOlHOkkxvU3v2esv5ocIxmuPj2tUD8M81qTSd8Q286IqoLvIcUDHmWYdhyjmbVSb3hun1T2uq6yMlUTsLM1ELcGwuBFTKF6SPqdbqT3NvclCoshCWiC5GZb96gCGYZ5bVVmvhQReu8OLsAqPTmmWHaBK60tv2HDyFN8KlUUAPj6Aum6wfuTs_YQrYjWJHHf4fDKWVL8O484c1RRHWojQxeBNmgYa1Ym38v0sFnU2hL8IYjy_7q2gwofE1zdUnfQ" style="">
+</div>
+</div>
+</div>
+</div>
+<!-- Business Impact -->
+<div class="lg:col-span-12 glass-card p-8 rounded-xl border border-slate-800 bg-gradient-to-br from-surface-container to-surface-container-highest" id="impact">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<h3 class="text-2xl font-bold mb-2" style="">Final Impact &amp; Results</h3>
+<p class="text-on-surface-variant" style="">The digital transformation of the Electoral Registry delivery model.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-12">
+<div class="text-center">
+<div class="text-4xl font-extrabold text-primary mb-1" style="">0</div>
+<div class="text-[10px] uppercase tracking-tighter text-on-surface-variant" style="">Manual Requests</div>
+</div>
+<div class="text-center">
+<div class="text-4xl font-extrabold text-tertiary mb-1" style="">100%</div>
+<div class="text-[10px] uppercase tracking-tighter text-on-surface-variant" style="">Uptime SLA</div>
+</div>
+<div class="text-center">
+<div class="text-4xl font-extrabold text-secondary mb-1" style="">&lt; 1s</div>
+<div class="text-[10px] uppercase tracking-tighter text-on-surface-variant" style="">Query Response</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / CTA -->
+<div class="mt-20 py-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="group cursor-pointer">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mb-2" style="">Previous Case Study</p>
+<h4 class="text-lg font-bold group-hover:text-primary transition-colors flex items-center gap-2" style="">
+<span class="material-symbols-outlined" style="">arrow_back</span> Supply Chain Resilience
+                </h4>
+</div>
+<a class="bg-primary-container text-on-primary-container px-8 py-3 rounded-lg font-bold hover:brightness-110 transition-all" href="#" style="">
+                Download Full Report (PDF)
+            </a>
+<div class="group cursor-pointer text-right">
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mb-2" style="">Next Case Study</p>
+<h4 class="text-lg font-bold group-hover:text-primary transition-colors flex items-center gap-2" style="">
+                    Fintech Fraud Detection <span class="material-symbols-outlined" style="">arrow_forward</span>
+</h4>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-20 border-t border-slate-800 bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-4 font-['Inter']">
+<div class="text-blue-400 font-bold" style="">Senior Analyst Framework</div>
+<div class="text-xs text-slate-500 text-center md:text-left" style="">
+                © 2024 Senior Analyst Framework. Built for strategic insight.
+            </div>
+<div class="flex gap-6">
+<a class="text-slate-600 hover:text-blue-400 underline underline-offset-4 text-xs opacity-80 hover:opacity-100 transition-all" href="#" style="">LinkedIn</a>
+<a class="text-slate-600 hover:text-blue-400 underline underline-offset-4 text-xs opacity-80 hover:opacity-100 transition-all" href="#" style="">GitHub</a>
+<a class="text-slate-600 hover:text-blue-400 underline underline-offset-4 text-xs opacity-80 hover:opacity-100 transition-all" href="#" style="">Email</a>
+</div>
+</div>
+</footer>
+</body></html>

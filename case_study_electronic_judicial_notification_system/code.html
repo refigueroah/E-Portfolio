@@ -1,0 +1,358 @@
+<!DOCTYPE html><html class="dark" lang="en" data-lt-installed="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Case Study: Electronic Judicial Notification System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#0b1326",
+                        "on-secondary": "#522300",
+                        "on-error": "#690005",
+                        "inverse-surface": "#dae2fd",
+                        "secondary-fixed": "#ffdbc8",
+                        "outline": "#8b90a0",
+                        "on-tertiary-fixed": "#00210c",
+                        "surface-container": "#171f33",
+                        "secondary-fixed-dim": "#ffb68b",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-lowest": "#060e20",
+                        "surface-tint": "#adc7ff",
+                        "tertiary-fixed-dim": "#49e181",
+                        "surface": "#0b1326",
+                        "on-tertiary": "#003919",
+                        "surface-container-highest": "#2d3449",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary-container": "#602a00",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-surface-variant": "#c1c6d7",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#6afe9b",
+                        "secondary": "#ffb68b",
+                        "on-surface": "#dae2fd",
+                        "on-secondary-fixed": "#321200",
+                        "on-background": "#dae2fd",
+                        "on-tertiary-container": "#003115",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#00285b",
+                        "inverse-primary": "#005bc0",
+                        "on-tertiary-fixed-variant": "#005227",
+                        "surface-container-low": "#131b2e",
+                        "surface-variant": "#2d3449",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-bright": "#31394d",
+                        "on-primary": "#002e68",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-container": "#4a8eff",
+                        "on-secondary-fixed-variant": "#753400",
+                        "tertiary": "#49e181",
+                        "background": "#0b1326",
+                        "tertiary-container": "#00a756",
+                        "primary": "#adc7ff",
+                        "inverse-on-surface": "#283044",
+                        "secondary-container": "#ff7f1c",
+                        "outline-variant": "#414754"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(23, 31, 51, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 144, 160, 0.2);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0b1326; }
+        ::-webkit-scrollbar-thumb { background: #2d3449; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #adc7ff; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b1326] dark:bg-[#0b1326] border-b border-slate-800/50 shadow-sm transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-16 px-8 max-w-[1280px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-slate-100" style="">Analyst Portfolio</div>
+<nav class="hidden md:flex gap-8 items-center font-inter text-sm font-medium tracking-wide">
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#" style="">Portfolio</a>
+<a class="text-blue-400 border-b-2 border-blue-400 pb-1" href="#" style="">Case Studies</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#" style="">Resume</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#" style="">Insights</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:bg-slate-800/40 p-2 rounded-full cursor-pointer" style="">mail</span>
+<span class="material-symbols-outlined text-slate-400 hover:bg-slate-800/40 p-2 rounded-full cursor-pointer" style="">account_circle</span>
+<button class="bg-primary text-on-primary px-4 py-1.5 rounded-lg text-sm font-bold hover:opacity-90 transition-all" style=""><br></button>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Navigation Anchor) -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-slate-800/50 bg-[#0b1326] dark:bg-[#0b1326] flex flex-col py-8 gap-y-6 overflow-y-auto">
+<div class="px-6 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary" style="">policy</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-slate-100 leading-none" style="">Project Alpha</h3>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter mt-1" style="">Operational Efficiency</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-y-1">
+<a class="flex items-center gap-4 py-3 text-blue-400 border-l-2 border-blue-400 pl-4 bg-blue-400/5 font-inter text-xs uppercase tracking-widest font-semibold transition-transform scale-95 active:scale-100" href="#context" style="">
+<span class="material-symbols-outlined text-lg" style="">business_center</span>
+<span class="" style="">Business Context</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 pl-4 hover:text-slate-200 font-inter text-xs uppercase tracking-widest font-semibold transition-transform scale-95 active:scale-100" href="#stakeholders" style="">
+<span class="material-symbols-outlined text-lg" style="">groups</span>
+<span class="" style="">Stakeholders</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 pl-4 hover:text-slate-200 font-inter text-xs uppercase tracking-widest font-semibold transition-transform scale-95 active:scale-100" href="#challenges" style="">
+<span class="material-symbols-outlined text-lg" style="">query_stats</span>
+<span class="" style="">Data Challenges</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 pl-4 hover:text-slate-200 font-inter text-xs uppercase tracking-widest font-semibold transition-transform scale-95 active:scale-100" href="#solution" style="">
+<span class="material-symbols-outlined text-lg" style="">lightbulb</span>
+<span class="" style="">Solution</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-slate-500 pl-4 hover:text-slate-200 font-inter text-xs uppercase tracking-widest font-semibold transition-transform scale-95 active:scale-100" href="#impact" style="">
+<span class="material-symbols-outlined text-lg" style="">trending_up</span>
+<span class="" style="">Impact</span>
+</a>
+</nav>
+<div class="mt-auto px-6 border-t border-slate-800/30 pt-4">
+<a class="flex items-center gap-4 py-2 text-slate-500 hover:text-slate-200 text-xs uppercase tracking-widest font-semibold" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">arrow_upward</span>
+<span class="" style="">Back to Top</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen bg-surface-dim">
+<div class="max-w-[1000px] mx-auto p-12 space-y-16">
+<!-- Hero Section -->
+<section class="relative rounded-xl overflow-hidden min-h-[400px] flex items-end p-10 border border-outline-variant/30">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 grayscale" data-alt="Abstract high-tech digital document with glowing blue encryption patterns and geometric lawyer scales of justice in a dark tech environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPPP5m6nPTL4-m20ks6wq9-sWGeXMFAMc2ggAppLRIFITDR8zIyWhVKcYMONLmySntKJ4JLycEt9F-2oNnyzGUtPZaL9aaH8FXgOU7_gAZEwwIu6KUgZDF27F6z4X9VvskqHQDsdAN-AaJ62uuFwBbBFYtrDiMT37sJjWOlj-bVZU-2PpS1Hw_yWvLcuYd7TcuS8uuVwWy_NA2JbsOzwPX1iSrnCHljA-TJx0UBL6loD81B-_WaISaPY2PS81IK026mJV_b2xchn8s" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
+</div>
+<div class="relative z-10 space-y-4">
+<span class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase" style="">Case Study</span>
+<h1 class="text-5xl font-extrabold tracking-tighter text-on-surface max-w-2xl leading-[1.1]" style="">Electronic Judicial Notification System</h1>
+<div class="flex gap-4 items-center pt-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-blue-500 border-2 border-surface flex items-center justify-center text-[10px] font-bold" style="">JD</div>
+<div class="w-8 h-8 rounded-full bg-purple-500 border-2 border-surface flex items-center justify-center text-[10px] font-bold" style="">SA</div>
+</div>
+<p class="text-on-surface-variant text-sm font-medium italic" style="">Transforming legal transparency through digitization.</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid - Context & Role -->
+<div class="grid grid-cols-12 gap-6" id="context">
+<!-- Business Context -->
+<div class="col-span-8 glass-panel p-8 rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary" style="">gavel</span>
+<h2 class="text-xl font-bold tracking-tight text-on-surface" style="">Business Context &amp; Problem</h2>
+</div>
+<p class="text-on-surface-variant text-lg leading-relaxed" style="">
+                            Traditional paper-based notifications across the nationwide court network were causing critical bottlenecks. The manual process resulted in <span class="text-secondary font-bold" style="">unprecedented operational costs</span> and significant legal delays, as physical couriers and registered mail failed to provide the speed required for modern judicial proceedings.
+                        </p>
+</div>
+<div class="mt-8 flex gap-6">
+<div class="p-4 bg-surface-container-high rounded-lg border border-outline-variant/20 flex-1">
+<p class="text-secondary text-2xl font-bold" style="">75%</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1" style="">Cost Overrun</p>
+</div>
+<div class="p-4 bg-surface-container-high rounded-lg border border-outline-variant/20 flex-1">
+<p class="text-secondary text-2xl font-bold" style="">14 Days</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1" style="">Avg. Delay</p>
+</div>
+</div>
+</div>
+<!-- My Role -->
+<div class="col-span-4 bg-primary-container p-8 rounded-xl text-on-primary-container relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-sm font-bold uppercase tracking-widest mb-4 opacity-80" style="">My Role</h3>
+<p class="text-2xl font-bold leading-tight mb-6" style="">Senior Analyst &amp; Process Architect</p>
+<ul class="space-y-4 text-sm font-medium">
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-lg" style="">check_circle</span>
+<span class="" style="">Conducted comprehensive AS-IS / TO-BE gap analysis.</span>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-lg" style="">check_circle</span>
+<span class="" style="">Defined functional specs for secure portals.</span>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-lg" style="">check_circle</span>
+<span class="" style="">Coordinated directly with cross-functional legal teams.</span>
+</li>
+</ul>
+</div>
+<div class="absolute -bottom-6 -right-6 opacity-10">
+<span class="material-symbols-outlined text-[160px]" style="font-variation-settings: &quot;FILL&quot; 1;">person_search</span>
+</div>
+</div>
+</div>
+<!-- Stakeholders Section -->
+<section class="space-y-6" id="stakeholders">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-bold tracking-tight" style="">Key Stakeholders</h2>
+<div class="h-px flex-1 mx-8 bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-5 gap-4">
+<div class="p-4 glass-panel rounded-lg text-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary mb-2" style="">account_balance</span>
+<p class="text-xs font-bold text-on-surface" style="">Judges</p>
+</div>
+<div class="p-4 glass-panel rounded-lg text-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary mb-2" style="">badge</span>
+<p class="text-xs font-bold text-on-surface" style="">Court Staff</p>
+</div>
+<div class="p-4 glass-panel rounded-lg text-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary mb-2" style="">hub</span>
+<p class="text-xs font-bold text-on-surface" style="">Notify Center</p>
+</div>
+<div class="p-4 glass-panel rounded-lg text-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary mb-2" style="">work</span>
+<p class="text-xs font-bold text-on-surface" style="">Lawyers</p>
+</div>
+<div class="p-4 glass-panel rounded-lg text-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-primary mb-2" style="">terminal</span>
+<p class="text-xs font-bold text-on-surface" style="">IT/Legal Teams</p>
+</div>
+</div>
+</section>
+<!-- Data Challenges Grid -->
+<section class="space-y-8" id="challenges">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" style="">warning</span>
+<h2 class="text-2xl font-bold tracking-tight" style="">Data Challenges</h2>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<div class="bg-surface-container-low border border-outline-variant/30 p-6 rounded-lg relative">
+<div class="text-error/40 text-4xl font-black absolute top-4 right-4 italic" style="">01</div>
+<h4 class="text-on-surface font-bold mb-2" style="">Paper Records</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Fragmentation of physical documents across multiple regional offices made data aggregation impossible.</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 p-6 rounded-lg relative">
+<div class="text-error/40 text-4xl font-black absolute top-4 right-4 italic" style="">02</div>
+<h4 class="text-on-surface font-bold mb-2" style="">Zero Tracking</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Lack of real-time visibility into notification statuses resulted in "lost" cases and legal ambiguity.</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/30 p-6 rounded-lg relative">
+<div class="text-error/40 text-4xl font-black absolute top-4 right-4 italic" style="">03</div>
+<h4 class="text-on-surface font-bold mb-2" style="">No Audit Trail</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" style="">Difficulty in verifying receipt of documents, leading to frequent legal disputes and process resets.</p>
+</div>
+</div>
+</section>
+<!-- Solution Section -->
+<section class="bg-surface-container-highest rounded-xl p-10 border border-primary/20 relative overflow-hidden" id="solution">
+<div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1 space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" style="">verified_user</span>
+<h2 class="text-3xl font-bold tracking-tight" style="">The Solution</h2>
+</div>
+<p class="text-on-surface-variant text-lg leading-relaxed" style="">
+                            We engineered a <span class="text-primary font-medium" style="">unified Web-based Notification Portal</span> that leverages industry-standard encryption and digital signatures. The platform serves as a secure, centralized hub where all judicial notifications are delivered, tracked, and archived instantly.
+                        </p>
+<div class="flex gap-4">
+<span class="px-3 py-1 bg-surface-container rounded-md text-xs font-bold border border-outline-variant/50 flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-sm" style="">cloud</span> Web Platform
+                            </span>
+<span class="px-3 py-1 bg-surface-container rounded-md text-xs font-bold border border-outline-variant/50 flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-sm" style="">lock</span> Encryption Tech
+                            </span>
+<span class="px-3 py-1 bg-surface-container rounded-md text-xs font-bold border border-outline-variant/50 flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-sm" style="">draw</span> Digital Signatures
+                            </span>
+</div>
+</div>
+<div class="w-full md:w-80">
+<div class="aspect-square glass-panel rounded-xl p-4 flex flex-col gap-3">
+<div class="h-2 w-full bg-primary/20 rounded"></div>
+<div class="h-2 w-3/4 bg-primary/20 rounded"></div>
+<div class="flex-1 bg-primary/5 rounded border border-dashed border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl" style="">qr_code_2</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="h-6 w-16 bg-primary rounded-sm"></div>
+<div class="h-4 w-4 rounded-full bg-tertiary"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Section -->
+<section class="grid grid-cols-3 gap-8" id="impact">
+<div class="col-span-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" style="">rocket_launch</span>
+<h2 class="text-2xl font-bold tracking-tight" style="">Business Impact</h2>
+</div>
+<div class="p-8 bg-surface-container rounded-xl border-t-2 border-tertiary">
+<h5 class="text-tertiary font-bold uppercase tracking-widest text-[10px] mb-4" style="">Operational Cost</h5>
+<p class="text-4xl font-extrabold text-on-surface mb-2" style="">-90%</p>
+<p class="text-sm text-on-surface-variant" style="">Near-complete elimination of physical mailing and logistics costs.</p>
+</div>
+<div class="p-8 bg-surface-container rounded-xl border-t-2 border-primary">
+<h5 class="text-primary font-bold uppercase tracking-widest text-[10px] mb-4" style="">Process Speed</h5>
+<p class="text-4xl font-extrabold text-on-surface mb-2" style="">4.5x</p>
+<p class="text-sm text-on-surface-variant" style="">Acceleration in document delivery and formal acknowledgment cycles.</p>
+</div>
+<div class="p-8 bg-surface-container rounded-xl border-t-2 border-secondary">
+<h5 class="text-secondary font-bold uppercase tracking-widest text-[10px] mb-4" style="">Transparency</h5>
+<p class="text-4xl font-extrabold text-on-surface mb-2" style="">100%</p>
+<p class="text-sm text-on-surface-variant" style="">Immutable audit trail for every notification sent and received.</p>
+</div>
+</section>
+<!-- Footer Quote -->
+<!-- Conclusion/CTA -->
+<div class="mt-12 text-center pb-16">
+<p class="text-on-surface-variant text-sm mb-6" style="">Interested in judicial digitization for your region?</p>
+<div class="flex justify-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold transition-all hover:scale-105 active:scale-95 flex items-center gap-2" title="Download Full Case Study (PDF)" style="">
+<span class="material-symbols-outlined text-xl" style="">picture_as_pdf</span>
+<span class="" style="">Download Full Case Study (PDF)</span>
+</button>
+<button class="bg-surface-container-high border border-outline-variant text-on-surface px-8 py-3 rounded-lg font-bold transition-all hover:bg-surface-bright" style="">Contact for Inquiries</button>
+</div>
+</div><footer class="text-center py-20 border-t border-outline-variant/20">
+<p class="text-xl italic text-on-surface-variant font-light max-w-2xl mx-auto" style="">
+                    "This project wasn't just about moving from paper to screen—it was about rebuilding the foundation of trust in our judicial communication."
+                </p>
+<p class="mt-6 text-sm font-bold text-primary" style="">Senior Legal Systems Analyst</p>
+</footer>
+</div>
+</main>
+<!-- FAB (Suppressed on Details Page based on mandate, but leaving empty structure if needed) -->
+</body></html>
