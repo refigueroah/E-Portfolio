@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>The Senior Analyst Framework | Ronald Figueroa</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#0b1326",
+                        "primary": "#adc7ff",
+                        "secondary": "#ffb68b",
+                        "tertiary": "#49e181",
+                        "on-surface-variant": "#c1c6d7",
+                        "primary-container": "#4a8eff",
+                        "on-primary-container": "#00285b"
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body { background-color: #0b1326; color: #dae2fd; }
+        .glass-card { background: rgba(23, 31, 51, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .dot-grid { background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0); background-size: 24px 24px; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-primary/30">
 
+    <header class="fixed top-0 w-full z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-16">
+            <div class="text-xl font-bold tracking-tighter text-white">Ronald Figueroa</div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a class="text-slate-400 hover:text-white transition-colors" href="../index.html">← Back to Portfolio</a>
+                <a class="text-primary border-b-2 border-primary pb-1" href="#methodology">Methodology</a>
+                <a class="text-slate-400 hover:text-white transition-colors" href="#education">Education</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-bold text-primary uppercase tracking-widest">Expertise Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="dot-grid pt-32 pb-24">
+        <article class="max-w-4xl mx-auto px-8">
+            <header class="mb-16">
+                <span class="text-secondary font-bold uppercase tracking-widest text-xs">Professional Philosophy</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-4 mb-8">The Senior Analyst Framework</h1>
+                <p class="text-xl text-on-surface-variant leading-relaxed">
+                    Combining 20+ years of institutional leadership with cutting-edge Applied Data Science from MIT to solve modern business challenges.
+                </p>
+            </header>
+
+            <section id="methodology" class="space-y-12">
+                <h2 class="text-3xl font-bold text-white">Core Methodology</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <span class="material-symbols-outlined">query_stats</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Predictive Modeling</h3>
+                        <p class="text-sm text-on-surface-variant">Leveraging Python and machine learning to move from "What happened?" to "What will happen?"</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary mb-6">
+                            <span class="material-symbols-outlined">account_tree</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Process Engineering</h3>
+                        <p class="text-sm text-on-surface-variant">Mapping complex workflows to identify bottlenecks and automate manual reporting cycles.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="mt-24">
+                <h2 class="text-3xl font-bold text-white mb-12">Academic Foundation</h2>
+                <div class="space-y-8">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-primary pt-1"><span class="material-symbols-outlined">school</span></div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Applied Data Science Program</h4>
+                            <p class="text-on-surface-variant">MIT Professional Education | 2025</p>
+                            <p class="text-sm mt-2 text-slate-500 italic">Capstone: Predictive modeling and high-volume data interpretation.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="text-primary pt-1"><span class="material-symbols-outlined">workspace_premium</span></div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Master’s in Judicial Management</h4>
+                            <p class="text-on-surface-variant">Maestría en Gestión Jurisdiccional</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-24 bg-primary-container p-12 rounded-[2.5rem] text-center">
+                <h2 class="text-3xl font-bold text-on-primary-container mb-6">Ready for Data-Driven Transformation?</h2>
+                <p class="text-on-primary-container/80 mb-8 max-w-xl mx-auto text-lg">Let’s connect to discuss how this framework can be applied to your organization’s specific data challenges.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:your.email@example.com" class="bg-slate-950 text-white px-8 py-3 rounded-xl font-bold hover:opacity-90 transition-all">Send an Email</a>
+                    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_ID" target="_blank" class="bg-white/20 text-on-primary-container border border-on-primary-container/20 px-8 py-3 rounded-xl font-bold hover:bg-white/30 transition-all">Connect on LinkedIn</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="py-12 bg-slate-950 text-center">
+        <p class="text-xs uppercase tracking-widest text-slate-500">© 2024 Ronald Figueroa. Advanced Analytics Portfolio.</p>
+    </footer>
+
+</body>
+</html>
